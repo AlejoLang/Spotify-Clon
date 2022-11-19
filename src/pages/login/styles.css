@@ -1,0 +1,52 @@
+.loginDiv {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fefefe;
+}
+
+.spotifyLogo
+{
+  width: 20%;
+  min-width: 250px;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto 2rem;
+}
+
+.logTitle
+{
+  font-size: 2rem;
+}
+
+.logDesc
+{
+  margin-top: 1em;
+  font-size: 1rem;
+}
+
+.loginLink
+{
+  font-size: 1.1rem;
+  line-height: 1.5em;
+  width: fit-content;
+  border-radius: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  margin: 2rem auto;
+  text-decoration: none;
+  color:#fefefe;
+  background-color: var(--spotify-color);
+  transition: 0.25s ease all;
+}
+
+.loginLink:hover
+{
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}

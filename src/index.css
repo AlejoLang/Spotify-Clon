@@ -1,5 +1,26 @@
 * {
   padding: 0;
   margin: 0;
+  --primary-color: #252525;
+  --spotify-color: #1DB954;
+  --hover-color: #168d40;
 }
 
+body
+{
+  background-color: var(--primary-color);
+}
+
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
