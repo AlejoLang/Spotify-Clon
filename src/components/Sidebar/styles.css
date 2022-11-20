@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: flex-start;
     line-height: 1.5em;
-    font-size: 18px;
+    font-size: 14px;
     height: 2em;
     margin: 6px 0.5rem;
   }
@@ -87,4 +87,84 @@
     height: 1.5em;
     margin-right: 1rem;
   }
+}
+
+@media screen and (min-width: 1024px) {
+  .sidebar 
+  {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .sidebarSpotifyLogo
+  {
+    display: block;
+    width: 80%;
+    margin: 1rem auto 2rem;
+  }
+
+  .sidebarLinks,
+  .sidebarOtherLinks
+  {
+    flex-direction: column;
+    height: fit-content;
+    display: flex;
+  }
+
+  .sidebarLinks *,
+  .sidebarOtherLinks *
+  {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1.5em;
+    font-size: 14px;
+    height: 1.5em;
+    margin: 8px 0.5rem;
+  }
+
+  .sidebarLinks * > svg,
+  .sidebarOtherLinks * > svg
+  {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 1rem;
+  }
+
+  .sidebarOtherLinks
+  {
+    border-top: 1px solid #fefefe;
+    margin: 1rem 0 0.5rem;
+    padding: 1rem 0 0.5rem;
+  }
+
+  .sidebarOtherLinks > *
+  {
+    display: flex;
+    line-height: 1.5em;
+    color: #fefefe;
+    text-decoration: none;
+    padding: 0.25rem 1rem;
+  }
+
+  .sidebarPlaylists
+  {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    overflow: auto;
+    padding: 0 1rem;
+    font-size: 14px;
+  }
+
+  .sidebarPlaylists > * 
+  {
+    margin: 0.5rem 0;
+    color: #fefefe;
+    text-decoration: none;
+  }
+
 }
