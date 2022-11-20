@@ -9,7 +9,7 @@ function Sidebar() {
     <div className='sidebar'>
       <img src="/images/logos/Spotify-Logo.png" 
           alt="Spotify Logo" 
-          className='spotifyLogo'
+          className='sidebarSpotifyLogo'
       />
       <div className="sidebarLinks">
         <Link href='/'>

@@ -5,7 +5,7 @@
   overflow: hidden;
 }
 
-.spotifyLogo
+.sidebarSpotifyLogo
 {
   display: none;
 }
@@ -51,5 +51,40 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .sidebar 
+  {
+    grid-area: 1 / 1 / 2 / 2;
+  }
 
+  .sidebarSpotifyLogo
+  {
+    display: block;
+    width: 80%;
+    margin: 1rem auto 2rem;
+  }
+
+
+  .sidebarLinks
+  {
+    flex-direction: column;
+  }
+
+  .sidebarLinks *
+  {
+    flex: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1.5em;
+    font-size: 18px;
+    height: 2em;
+    margin: 6px 0.5rem;
+  }
+
+  .sidebarLinks * > svg 
+  {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 1rem;
+  }
 }
