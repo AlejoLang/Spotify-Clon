@@ -4,40 +4,51 @@ import { Route, Link, useLocation} from 'wouter'
 import { TokenContext } from './context/TokenContext';
 import Main from './pages/main'
 import Login from './pages/login'
+import getSpotifyToken from './services/getToken';
 
 
 function App() {
 
-  const [path, goToPath] = useLocation();
+  const [path, goToPath] = useLocation()
   const {token, setToken} = useContext(TokenContext)
 
-  useEffect(() => {
-    let token = window.localStorage.getItem('token');
-    const hash = window.location.hash;
+  const handleTokenResponse = res => {
+    console.log(res)
+    if(res?.error){return;}
+    window.localStorage.setItem('token', JSON.stringify(res));
+    setToken(res);
+    window.location.search = ''
+  } 
 
-    if(!token && !hash) {
+  useEffect(() => {
+    let savedToken = window.localStorage.getItem('token')
+    let urlCode = window.location.search
+    let code;
+
+    if(!savedToken && !urlCode) {
       goToPath('/login')
     }
 
-    if(!token && hash) {
-      token = hash.substring(1)
-                  .split("&")
-                  .find(elem => elem.startsWith("access_token"))
-                  .split("=")[1]
+    if(!savedToken && urlCode) {
+      code = urlCode.substring(1)
+                    .split("&")
+                    .find(elem => elem.startsWith("code"))
+                    .split("=")[1]
       
-      window.location.hash = ''
-      window.localStorage.setItem('token', token);
+      getSpotifyToken(code).then(data => handleTokenResponse(data));
     }
 
-    setToken(token);
-  })
+    if(savedToken) {
+      setToken(JSON.parse(savedToken))
+    }
 
-  console.log(token)
+  },[])
 
   return (
     <div className="App">
       <Route path='/' component={Main}/>
       <Route path='/login' component={Login}/>
+      {JSON.stringify(token)}
     </div>
   );
 }
