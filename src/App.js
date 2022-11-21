@@ -20,8 +20,7 @@ function App() {
     if(res?.error){return;}
     window.localStorage.setItem('token', JSON.stringify(res));
     setToken(res);
-
-    setTimeout(function () {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
+    return true;
   } 
 
   useEffect(() => {
@@ -48,6 +47,8 @@ function App() {
     }
 
   },[])
+
+  setInterval(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
 
   return (
     <div className="App">
