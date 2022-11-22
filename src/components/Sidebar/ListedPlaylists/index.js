@@ -8,12 +8,13 @@ function ListedPlaylist() {
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {
+    console.log('useEffect Playlists')
     fetchData(
       'https://api.spotify.com/v1/me/playlists',
       {},
       'GET'
-    ).then(res => setPlaylists(res.items))
-  })
+    ).then(res => setPlaylists(res ? res.items : []))
+  }, [])
   
 
   return (
