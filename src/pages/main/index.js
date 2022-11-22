@@ -5,7 +5,7 @@ import './styles.css'
 function Main() {
   return (
     <div className='mainDiv'>
-      <Sidebar />
+      
     </div>
   )
 }
