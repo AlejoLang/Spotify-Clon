@@ -1,59 +1,54 @@
-import { useEffect, useContext } from 'react';
+import { useEffect} from 'react';
 import './App.css';
-import { Route, Link, useLocation} from 'wouter'
-import { TokenContext } from './context/TokenContext';
+import { Route, Link, useLocation, Switch} from 'wouter'
 import Main from './pages/main'
 import Login from './pages/login'
 import getSpotifyToken from './services/getToken';
 import refreshToken from './services/refreshToken';
+import search from './pages/search';
+import Sidebar from './components/Sidebar';
+import Callback from './pages/callback';
 
 function App() {
 
   const [path, goToPath] = useLocation()
-  const {token, setToken} = useContext(TokenContext)
 
   let savedToken = window.localStorage.getItem('token')
-
-  const handleTokenResponse = res => {
-
-    console.log(res)
-    if(res?.error){return;}
-    window.localStorage.setItem('token', JSON.stringify(res));
-    setToken(res);
-    return true;
-  } 
+  let url = window.location.pathname;
 
   useEffect(() => {
 
-    let urlCode = window.location.search
-    let code;
+    const handleTokenResponse = res => {
+      console.log(res)
+      if(res?.error){return;}
+      window.localStorage.setItem('token', JSON.stringify(res));
+      return true;
+    } 
 
-    if(!savedToken && !urlCode) {
+    if(!savedToken && url !== '/callback') {
       goToPath('/login')
     }
 
-    if(!savedToken && urlCode) {
-      code = urlCode.substring(1)
-                    .split("&")
-                    .find(elem => elem.startsWith("code"))
-                    .split("=")[1]
-
-      getSpotifyToken(code).then(data => handleTokenResponse(data));
-    }
-
     if(savedToken) {
-      setToken(JSON.parse(savedToken))
+      window.localStorage.setItem('token', savedToken)
       refreshToken(savedToken).then(res => handleTokenResponse(res));
     }
 
-  },[])
-
-  setInterval(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
+    setInterval(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
+  }, [savedToken, goToPath])
 
   return (
     <div className="App">
-      <Route path='/' component={Main}/>
-      <Route path='/login' component={Login}/>
+      <Switch>
+        <Route path='/callback' component={Callback} />
+        <Route path='/login' component={Login}/>
+
+        <div className="mainApp">
+          <Sidebar />
+          <Route path='/' component={Main}/>
+          <Route path='/search' component={search}/>
+        </div>
+      </Switch>
     </div>
   );
 }
