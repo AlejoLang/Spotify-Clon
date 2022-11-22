@@ -1,0 +1,38 @@
+
+.sidebarPlaylists
+{
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .sidebarPlaylists
+  {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    overflow: auto;
+    padding: 0 1rem;
+    font-size: 14px;
+  }
+
+  .sidebarPlaylistsItem 
+  {
+    color: #fefefe;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.5rem 0;
+  }
+
+  .sidebarPlaylistsItemImg
+  {
+    height: 2em;
+    width: 2em;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+}

@@ -3,6 +3,7 @@ import './styles.css'
 import { Link } from 'wouter'
 import { FaHome, FaSearch, FaHeart } from 'react-icons/fa'
 import { GiBookshelf } from 'react-icons/gi'
+import ListedPlaylist from './ListedPlaylists'
 
 function Sidebar() {
   return (
@@ -31,17 +32,7 @@ function Sidebar() {
           Liked
         </Link>
       </div>
-      <div className="sidebarPlaylists">
-        <Link href='/playlists/asd'>
-          asdas
-        </Link>
-        <Link href='/playlists/asd'>
-          asdas
-        </Link>
-        <Link href='/playlists/asd'>
-          asdas
-        </Link>
-      </div>
+      <ListedPlaylist />
     </div>
   )
 }
