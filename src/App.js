@@ -1,9 +1,8 @@
 import { useEffect} from 'react';
 import './App.css';
-import { Route, Link, useLocation, Switch} from 'wouter'
+import { Route, useLocation, Switch} from 'wouter'
 import Main from './pages/main'
 import Login from './pages/login'
-import getSpotifyToken from './services/getToken';
 import refreshToken from './services/refreshToken';
 import search from './pages/search';
 import Sidebar from './components/Sidebar';
