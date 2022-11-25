@@ -27,7 +27,7 @@ function Sidebar() {
         </Link>
       </div>
       <div className="sidebarOtherLinks">
-        <Link href='/playlists/liked'>
+        <Link href='/playlist/liked'>
           <FaHeart />
           Liked
         </Link>
