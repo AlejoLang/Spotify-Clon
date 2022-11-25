@@ -1,4 +1,4 @@
-import { useEffect} from 'react';
+import { useEffect, useState} from 'react';
 import './App.css';
 import { Route, useLocation, Switch} from 'wouter'
 import Main from './pages/main'
@@ -7,6 +7,7 @@ import refreshToken from './services/refreshToken';
 import search from './pages/search';
 import Sidebar from './components/Sidebar';
 import Callback from './pages/callback';
+import Playlist from './pages/playlist'
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
     const handleTokenResponse = res => {
       console.log(res)
       if(res?.error){return;}
-      window.localStorage.setItem('token', JSON.stringify(res));
+      window.localStorage.setItem('token', JSON.stringify(res))
       return true;
     } 
 
@@ -45,7 +46,8 @@ function App() {
         <div className="mainApp">
           <Sidebar />
           <Route path='/' component={Main}/>
-          <Route path='/search' component={search}/>
+          <Route path='/search' component={search}/> 
+          <Route path='/playlist/:playlistid' component={Playlist}/>
         </div>
       </Switch>
     </div>
