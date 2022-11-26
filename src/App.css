@@ -4,7 +4,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 70% 20% 10%;
+  grid-template-rows: 80% 10% 10%;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -18,7 +18,7 @@
 @media screen and (min-width: 1024px) {
   .mainApp
   {
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
     grid-template-rows: 88% 12%;
   }
 }
