@@ -1,0 +1,36 @@
+.trackList-item
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+.trackList-item-img
+{
+  height: 2.75rem;
+  width: 2.75rem;
+  margin-right: 1rem;
+}
+
+.trackList-item-info
+{
+  width: 100%;
+  font-size: 14px;
+  overflow: hidden;
+  color: #efefef;
+}
+
+.trackList-item-info-name
+{
+  font-weight: 700;
+}
+
+.trackList-item-info-name,
+.trackList-item-info-artist
+{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

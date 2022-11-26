@@ -1,0 +1,9 @@
+.TrackList
+{
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  padding: 1rem;
+  list-style: none;
+}

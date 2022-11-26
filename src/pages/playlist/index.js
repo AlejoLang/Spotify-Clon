@@ -1,30 +1,28 @@
-import React, { useEffect, useState} from 'react'
+import { useState, useEffect } from 'react';
 import './styles.css'
+import TracksList from '../../components/TracksList';
+import PlaylistInfo from '../../components/PlaylistInfo';
 import fetchData from '../../services/fetchData';
-import Track from '../../components/Track';
 
 function Playlist({params}) {
   const playlistId = params.playlistid;
   console.log(params)
-  const [tracks, setTracks] = useState([])
+  
+  const [playlistInfo, setPlaylistInfo] = useState({})
 
   useEffect(() => {
-    console.log('useEffect Playlists')
     fetchData(
-      playlistId === 'liked' ? 'https://api.spotify.com/v1/me/tracks' : 'https://api.spotify.com/v1/playlists/' + playlistId + '/tracks',
+      playlistId === 'liked' ? 'https://api.spotify.com/v1/me/tracks' : 'https://api.spotify.com/v1/playlists/' + playlistId,
       'limit=50',
       'GET'
-    ).then(res => setTracks(res.items ? res.items : []))
+    ).then(res => { setPlaylistInfo(res ? res : {})})
   }, [playlistId])
 
+  console.log(playlistInfo)
   return (
-    <div>
-      {tracks.map(item =>
-        <Track 
-          name={item.track.name}
-          img={item.track.album.images[0].url}
-          artist={item.track.artists[0].name}
-        />)}
+    <div className='playlistDiv'>
+      <PlaylistInfo playlistInfo={playlistInfo} type={playlistId}/>
+      <TracksList playlistTracks={playlistInfo} type={playlistId}/>
     </div>
   )
 }

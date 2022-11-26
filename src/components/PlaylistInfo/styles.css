@@ -1,0 +1,35 @@
+.playlistInfo
+{
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1.5rem;
+  color: #efefef;
+  background: rgb(29,185,84);
+  background: linear-gradient(180deg, rgba(29,185,84,1) 0%, rgba(37,37,37,1) 100%);
+}
+
+.playlistInfo-img
+{
+  height: 70%;
+  min-height: 100px;
+  aspect-ratio: 1/1;
+  box-shadow: 0 0 10px #333;
+}
+
+.playlistInfo-name
+{
+  font-size: 3rem;
+  text-shadow: 0 0 10px #333;
+}
+
+.likedType
+{
+  display: none;
+}

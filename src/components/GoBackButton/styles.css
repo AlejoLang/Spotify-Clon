@@ -1,0 +1,22 @@
+.goBackButton
+{
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 34, 34, 0.5);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.goBackButton svg 
+{
+  fill: #efefef;
+  width: 80%;
+  height: 80%;
+}
