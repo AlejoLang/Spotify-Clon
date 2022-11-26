@@ -34,9 +34,9 @@ function App() {
       refreshToken(savedToken).then(res => handleTokenResponse(res));
     }
 
-    setInterval(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
-  }, [savedToken, goToPath])
-  
+    setTimeout(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
+  }, [savedToken, goToPath, url])
+
   return (
     <div className="App">
       <Switch>
