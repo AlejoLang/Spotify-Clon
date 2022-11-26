@@ -18,16 +18,19 @@ function TracksList({playlistTracks, type}) {
   }, [playlistTracks, type])
 
   return (
-    <ul className='TrackList'>
-      {tracks.map(item =>
-        <Track 
-          name={item.track.name}
-          img={item.track.album.images[0].url}
-          artist={item.track.artists[0].name}
-          duration={item.track.duration_ms}
-          key={item.track.id}
-        />)}
-    </ul>
+    <div className="tracksListDiv">
+      <h2 className="tracksListDiv-title">Songs: </h2>
+      <ul className='tracksList'>
+        {tracks.map(item =>
+          <Track 
+            name={item.track.name}
+            img={item.track.album.images[0].url}
+            artist={item.track.artists[0].name}
+            duration={item.track.duration_ms}
+            key={item.track.id}
+          />)}
+      </ul>
+    </div>
   )
 }
 
