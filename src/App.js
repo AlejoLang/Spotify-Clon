@@ -1,4 +1,4 @@
-import { useEffect, useState} from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import { Route, useLocation, Switch} from 'wouter'
 import Main from './pages/main'
@@ -8,6 +8,7 @@ import search from './pages/search';
 import Sidebar from './components/Sidebar';
 import Callback from './pages/callback';
 import Playlist from './pages/playlist'
+import Search from './pages/search';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
           <Route path='/' component={Main}/>
           <Route path='/search' component={search}/> 
           <Route path='/playlist/:playlistid' component={Playlist}/>
+          <Route path='/search/:searchQuery' component={Search} />
         </div>
       </Switch>
     </div>
