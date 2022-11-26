@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import './styles.css'
-import TracksList from '../../components/TracksList';
-import PlaylistInfo from '../../components/PlaylistInfo';
-import fetchData from '../../services/fetchData';
+import TracksList from 'components/TracksList'
+import PlaylistInfo from 'components/PlaylistInfo'
+import fetchData from 'services/fetchData'
 
 function Playlist({params}) {
   const playlistId = params.playlistid;

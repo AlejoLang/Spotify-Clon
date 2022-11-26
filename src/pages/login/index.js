@@ -1,7 +1,6 @@
-import React from 'react'
 import './styles.css'
-import generateCodeVerifier from '../../services/getCodeVerifier.js'
-import getCodeChallenge from '../../services/getCodeChallenge.js'
+import generateCodeVerifier from 'services/getCodeVerifier.js'
+import getCodeChallenge from 'services/getCodeChallenge.js'
 
 let CODE_CHALLENGE
 const handleRes = async data => {

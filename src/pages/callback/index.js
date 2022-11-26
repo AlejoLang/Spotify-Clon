@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useLocation } from 'wouter';
-import getSpotifyToken from '../../services/getToken';
+import getSpotifyToken from 'services/getToken';
 
 function Callback() {
 
