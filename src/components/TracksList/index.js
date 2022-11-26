@@ -24,6 +24,7 @@ function TracksList({playlistTracks, type}) {
           name={item.track.name}
           img={item.track.album.images[0].url}
           artist={item.track.artists[0].name}
+          duration={item.track.duration_ms}
           key={item.track.id}
         />)}
     </ul>
