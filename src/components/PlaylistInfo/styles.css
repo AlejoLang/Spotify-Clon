@@ -18,7 +18,8 @@
 .playlistInfo-img
 {
   height: 70%;
-  min-height: 100px;
+  min-height: 128px;
+  max-height: 512px;
   aspect-ratio: 1/1;
   box-shadow: 0 0 10px #333;
 }
@@ -32,4 +33,21 @@
 .likedType
 {
   display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .playlistInfo
+  {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 4rem 4rem;
+    height: 45vh;
+  }
+
+  .playlistInfo-img
+  {
+    margin-right: 1rem;
+  }
 }
