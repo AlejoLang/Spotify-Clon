@@ -6,6 +6,7 @@
   padding: 0.5rem;
   margin: 1rem 0;
   border-radius: 10px;
+  cursor: default;
 }
 
 .trackList-item-img
@@ -40,7 +41,7 @@
 {
   color: #efefef;
   font-size: 16px;
-  margin-right: 1rem;
+  margin: 0 1rem;
 }
 
 .trackList-item:hover
