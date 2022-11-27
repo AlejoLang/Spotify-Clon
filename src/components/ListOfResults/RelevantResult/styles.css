@@ -1,0 +1,82 @@
+.listOfResultsDiv-relevant
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  cursor: default;
+  overflow: hidden;
+}
+
+.listOfResultsDiv-relevant-img
+{
+  aspect-ratio: 1/1;
+  width: 3.5rem;
+  margin-right: 1rem;
+  min-width: 32px;
+  max-width: 140px;
+}
+
+.listOfResultsDiv-relevant-info
+{
+  width: 100%;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+.listOfResultsDiv-relevant-info-trackTitle
+{
+  font-weight: 700;
+}
+
+.listOfResultsDiv-relevant-info-trackTitle,
+.listOfResultsDiv-relevant-info-trackArtists
+{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.listOfResultsDiv-relevant-info-trackType
+{
+  display: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  line-height: 1em;
+  width: fit-content;
+  font-size: 14px;
+  border-radius: 1rem;
+  background: var(--secondary-color);
+}
+
+@media screen and (min-width: 768px) {
+  .listOfResultsDiv-relevant
+  {
+    width: 50%;
+    align-items: flex-end;
+  }
+
+  .listOfResultsDiv-relevant-img
+  {
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .listOfResultsDiv-relevant-info
+  {
+    font-size: 16px;
+    line-height: 1.75em;
+  }
+
+  .listOfResultsDiv-relevant-info-trackTitle
+  {
+    font-size: 20px;
+  }
+
+  .listOfResultsDiv-relevant-info-trackType
+  {
+    display: block;
+  }
+}

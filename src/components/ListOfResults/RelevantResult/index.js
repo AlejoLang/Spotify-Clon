@@ -1,4 +1,4 @@
-
+import './styles.css'
 
 function RelevantResult({result}) {
   return (
@@ -12,7 +12,7 @@ function RelevantResult({result}) {
           <p className="listOfResultsDiv-relevant-info-trackTitle">
             {result?.name}
           </p>
-          <p className="listOfResultsDiv-relevant-info-trackArtist">
+          <p className="listOfResultsDiv-relevant-info-trackArtists">
             {
               result?.artists
                 .map((artist) => artist?.name)
