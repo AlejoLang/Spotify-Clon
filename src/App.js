@@ -17,14 +17,15 @@ function App() {
   let savedToken = window.localStorage.getItem('token')
   let url = window.location.pathname;
 
-  useEffect(() => {
+  const handleTokenResponse = res => {
+    console.log(res)
+    if(res?.error){return;}
+    window.localStorage.setItem('token', JSON.stringify(res))
+    setTimeout(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
+    return true;
+  } 
 
-    const handleTokenResponse = res => {
-      console.log(res)
-      if(res?.error){return;}
-      window.localStorage.setItem('token', JSON.stringify(res))
-      return true;
-    } 
+  useEffect(() => {
 
     if(!savedToken && url !== '/callback') {
       goToPath('/login')
@@ -35,8 +36,7 @@ function App() {
       refreshToken(savedToken).then(res => handleTokenResponse(res));
     }
 
-    setTimeout(() => {refreshToken(savedToken).then(res => handleTokenResponse(res))}, 1000 * 60 * 60)
-  }, [savedToken, goToPath, url])
+  }, [])
 
   return (
     <div className="App">
