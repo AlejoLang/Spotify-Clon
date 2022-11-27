@@ -16,7 +16,7 @@ function Search({params}) {
         'https://api.spotify.com/v1/search',
         `q=${searchQuery}&type=album,artist,playlist,track`,
         'GET'
-      ).then(res => {console.log('hola ', res);setSearchResults(Object.keys(res).length >= 1 ? res : {})})
+      ).then(res => setSearchResults(Object.keys(res).length >= 1 ? res : {}))
     }
   }, [searchQuery])
   

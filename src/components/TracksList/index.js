@@ -5,7 +5,6 @@ import './styles.css'
 function TracksList({playlistTracks, type}) {
 
   const [tracks, setTracks] = useState([])
-  console.log(playlistTracks)
 
   useEffect(() => {
     if(type !== 'liked'){

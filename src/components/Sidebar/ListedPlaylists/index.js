@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'wouter';
 import fetchData from '../../../services/fetchData'
 import './styles.css'
@@ -9,7 +9,6 @@ function ListedPlaylist() {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    console.log('useEffect Playlists')
     fetchData(
       'https://api.spotify.com/v1/me/playlists',
       '',

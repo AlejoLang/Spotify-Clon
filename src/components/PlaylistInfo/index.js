@@ -11,8 +11,6 @@ function PlaylistInfo({playlistInfo, type}) {
       setPlaylistData({name: 'Liked songs', img:''})
       return;
     }
-    console.log('Info:')
-    console.log(playlistInfo)
     setPlaylistData(playlistInfo.name ? {name: playlistInfo?.name, img: playlistInfo?.images[0]?.url} : {})
   }, [playlistInfo, type])
 

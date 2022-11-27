@@ -10,11 +10,14 @@ const fetchData = async (url, body, method) => {
       },
       body: method === 'GET' ? null : body,
       method
-    }).then(res => {console.log(res); return res.json()});
+    }).then(res => res.json())
 
-  console.log(response);
+  console.log('---------------------')
+  console.log('Fetch response')
+  console.log(response)
+  console.log('---------------------')
 
-  return response;
+  return response
 }
 
 export default fetchData

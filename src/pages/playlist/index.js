@@ -6,7 +6,6 @@ import fetchData from 'services/fetchData'
 
 function Playlist({params}) {
   const playlistId = params.playlistid;
-  console.log(params)
   
   const [playlistInfo, setPlaylistInfo] = useState({})
 
@@ -18,7 +17,6 @@ function Playlist({params}) {
     ).then(res => { setPlaylistInfo(res ? res : {})})
   }, [playlistId])
 
-  console.log(playlistInfo)
   return (
     <div className='playlistDiv'>
       <PlaylistInfo playlistInfo={playlistInfo} type={playlistId}/>
