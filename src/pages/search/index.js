@@ -3,6 +3,7 @@ import { ImSearch } from 'react-icons/im'
 import ListOfResults from 'components/ListOfResults'
 import fetchData from 'services/fetchData'
 import { useLocation } from 'wouter';
+import './styles.css'
 
 function Search({params}) {
 
@@ -24,14 +25,15 @@ function Search({params}) {
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     const query = document.querySelector('.searchDiv-form-input').value
+    document.querySelector('.searchDiv-form-input').value = ''
     goToPath('/search/' + query)
   }
 
   return (
     <div className="searchDiv">
       <form onSubmit={handleSearchSubmit} className="searchDiv-form">
-        <input type="text" className="searchDiv-form-input" placeholder="Insert a song / artist / etc. name"/>
-        <button><ImSearch /></button>
+        <input type="text" name='search input' className="searchDiv-form-input" placeholder="Insert a song / artist / etc. name"/>
+        <button name='submit button' className='searchDiv-form-submitBtn'><ImSearch /></button>
       </form>
       <ListOfResults searchResults={searchResults}/>
     </div>
