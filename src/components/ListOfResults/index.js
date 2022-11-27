@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import RelevantResult from './RelevantResult';
 
 function ListOfResults({searchResults}) {
 
@@ -11,7 +12,8 @@ function ListOfResults({searchResults}) {
   }, [searchResults])
 
   return (
-    <div>
+    <div className='listOfResultsDiv'>
+      <RelevantResult result={results?.tracks?.items[0]} />
       {results?.tracks?.items?.map(item => <p>{item.name}</p>)}
     </div>
   )
