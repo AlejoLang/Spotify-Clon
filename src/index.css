@@ -7,6 +7,7 @@
   --spotify-color: #1DB954;
   --hover-color: #168d40;
   color: #efefef;
+  transition: 0.25s ease all;
 }
 
 body
