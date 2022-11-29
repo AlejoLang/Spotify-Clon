@@ -18,7 +18,7 @@ function Search({params}) {
         `q=${searchQuery}&type=album,artist,playlist,track`,
         'GET'
       ).then(res => setSearchResults(Object.keys(res).length >= 1 ? res : {}))
-    }
+    } 
   }, [searchQuery])
   
 
@@ -27,6 +27,16 @@ function Search({params}) {
     const query = document.querySelector('.searchDiv-form-input').value
     document.querySelector('.searchDiv-form-input').value = ''
     goToPath('/search/' + query)
+  }
+
+  if(!searchQuery) {
+    return (
+      <div className="searchDiv">
+        <form onSubmit={handleSearchSubmit} className="searchDiv-form">
+          <input type="text" name='search input' className="searchDiv-form-input" placeholder="Insert a song / artist / etc. name"/>
+          <button name='submit button' className='searchDiv-form-submitBtn'><ImSearch /></button>
+        </form>
+      </div> )
   }
 
   return (
