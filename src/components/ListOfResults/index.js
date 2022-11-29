@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import RelevantResult from './RelevantResult';
+import ResultsMainTracks from './ResultsMainTracks';
+import './styles.css'
 
 function ListOfResults({searchResults}) {
 
@@ -14,7 +16,7 @@ function ListOfResults({searchResults}) {
   return (
     <div className='listOfResultsDiv'>
       <RelevantResult result={results?.tracks?.items[0]} />
-      {results?.tracks?.items?.map(item => <p>{item.name}</p>)}
+      <ResultsMainTracks results={results?.tracks?.items?.slice(1)} />
     </div>
   )
 }

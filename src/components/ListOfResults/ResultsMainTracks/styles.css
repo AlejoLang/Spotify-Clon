@@ -1,0 +1,59 @@
+.resultsMainTracksList
+{
+  width: 50%;
+  height: 40vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.resultsMainTracksList-item
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 10px;
+  cursor: default;
+}
+
+.resultsMainTracksList-item-img
+{
+  height: 2.75rem;
+  width: 2.75rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+.resultsMainTracksList-item-info
+{
+  width: 100%;
+  font-size: 14px;
+  overflow: hidden;
+  color: #efefef;
+}
+
+.resultsMainTracksList-item-name
+{
+  font-weight: 700;
+}
+
+.resultsMainTracksList-item-name,
+.resultsMainTracksList-item-artist
+{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resultsMainTracksList-item-duration
+{
+  color: #efefef;
+  font-size: 16px;
+  margin: 0 1rem;
+}
+
+.resultsMainTracksList-item:hover
+{
+  background-color: #303030;
+}
